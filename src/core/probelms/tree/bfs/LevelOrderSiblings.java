@@ -5,6 +5,10 @@ import java.util.Queue;
 
 import core.tree.TreeNodeWithNext;
 
+/** left -> right  and last node in level should point to null
+ * @author smettu
+ *
+ */
 public class LevelOrderSiblings {
 	
 	public static void main(String[] args) {
@@ -39,7 +43,7 @@ public class LevelOrderSiblings {
 				}
 				temp2 = temp.getRight();
 			}
-			h= h*2;
+			h= h*2; 
 			if(temp!=null)
 				temp.setNext(null);
 		}
