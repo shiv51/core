@@ -1,10 +1,14 @@
 package core.probelms.tree.dfs;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 import core.tree.TreeNode;
 
 public class BinaryTreeAllPathToSum {
+	
+	private static List<List<TreeNode>> ll = new ArrayList<List<TreeNode>>();
 	public static void main(String[] args) {
 		TreeNode one = new TreeNode(1);
 		TreeNode two = new TreeNode(2);
@@ -15,7 +19,14 @@ public class BinaryTreeAllPathToSum {
 		one.setRight(three);
 		two.setLeft(four);
 		two.setRight(five);
-		System.out.println(sum1(one,41));
+		three.setRight(four);
+		List<TreeNode> l = new ArrayList<TreeNode>();
+		System.out.println();
+		sum1(one,8,l);
+		List<List<TreeNode>> output = new ArrayList<List<TreeNode>>();
+		System.out.println(output);
+		System.out.println(ll);
+		
 	}
 
 	public static void sum(TreeNode root) {
@@ -50,5 +61,44 @@ public class BinaryTreeAllPathToSum {
 		}
 		
 		
+	}
+	
+	public static void sum1(TreeNode root, int sum, List<TreeNode> list) {
+		if(root == null)
+			return;
+		if(root.getValue() == sum && root.getLeft()==null && root.getRight()==null) {
+			 List<TreeNode> add = new ArrayList<TreeNode>(list);
+			 add.add(root);
+			 ll.add(add);
+		}
+		else if(root.getLeft()==null && root.getRight()==null) {
+		}
+		else {
+			list.add(root);
+			sum1(root.getRight(),sum-root.getValue(),list);
+			sum1(root.getLeft(),sum-root.getValue(),list);
+			list.remove(root);
+		}
+		
+		
+	}
+	
+	public static void sum1(TreeNode root, int sum, List<TreeNode> list,List<List<TreeNode>> output) {
+		if(root == null)
+			return ;
+		if(root.getValue() == sum && root.getLeft()==null && root.getRight()==null) {
+			 List<TreeNode> add = new ArrayList<TreeNode>(list);
+			 add.add(root);
+			 output.add(add);
+		}
+		else if(root.getLeft()==null && root.getRight()==null) {
+			//return;
+		}
+		else {
+			list.add(root);
+			sum1(root.getRight(),sum-root.getValue(),list);
+			sum1(root.getLeft(),sum-root.getValue(),list);
+			list.remove(root);
+		}
 	}
 }
