@@ -1,4 +1,4 @@
-package core.probelms.binarysearch;
+package core.problems.binarysearch;
 
 public class CeilingOfNumber {
 
