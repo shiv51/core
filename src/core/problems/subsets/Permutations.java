@@ -5,9 +5,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import javax.imageio.event.IIOReadUpdateListener;
-
 public class Permutations {
+	
+	public final static List<String> l1 = new ArrayList<String>();
 
 	public static void main(String[] args) {
 		int[] input = {1,2,3};
