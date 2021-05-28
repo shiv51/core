@@ -26,4 +26,25 @@ public class IsBST {
 		}
 			return true;
 	}
+	
+	public static boolean isBst1(TreeNode root) {
+	
+		if(root==null) {
+			return true;
+		}
+		if(!isBst1(root.getLeft())) {
+			return false;
+			
+		}
+		if(prev!=null && root.getValue()<=prev.getValue()) {
+			return false;
+		}
+		prev = root;
+		if(isBst1(root.getRight())) {
+			return false;
+		}
+		return true;
+		
+	
+}	
 }

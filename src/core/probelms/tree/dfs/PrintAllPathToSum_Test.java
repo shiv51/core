@@ -25,4 +25,16 @@ public class PrintAllPathToSum_Test {
 		}
 		list.remove(root.getValue());
 	}
+	
+	public static void print(TreeNode root,List<Integer> list) {
+		
+		if(root==null) {
+			return;
+		}
+		if(root.getLeft()==null && root.getRight() ==null) {
+			//print;
+		}
+		
+		
+	}
 }
