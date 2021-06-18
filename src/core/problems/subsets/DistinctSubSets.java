@@ -3,6 +3,8 @@ package core.problems.subsets;
 import java.util.ArrayList;
 import java.util.List;
 
+import sun.security.util.ArrayUtil;
+
 public class DistinctSubSets {
 
 	public static void main(String[] args) {
@@ -17,6 +19,9 @@ public class DistinctSubSets {
 		}
 		
 		System.out.println(ll);
+		System.out.println(findSubsets(input));
+		System.out.println("--------------");
+		getSubsets(input);
 	}
 	
 	public static List<List<Integer>> findSubsets(int[] nums) {
@@ -35,4 +40,23 @@ public class DistinctSubSets {
 	    }
 	    return subsets;
 	  }
+	
+	public static List<List<Integer>> getSubsets(int[] nums){
+		
+		List<List<Integer>> sets = new ArrayList<>();
+		List<Integer> x = new ArrayList<>();
+		sets.add(x);
+		for(int i=0;i<nums.length;i++){
+			int n = sets.size();
+			for(int j = 0;j<n;j++){
+				List<Integer> l = new ArrayList<>(sets.get(j));
+				l.add(nums[i]);
+				sets.add(l);
+			}
+			
+		}
+		System.out.println(sets);
+		return null;
+		
+	}
 }

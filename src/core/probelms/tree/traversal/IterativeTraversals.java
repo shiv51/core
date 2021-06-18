@@ -17,7 +17,6 @@ public class IterativeTraversals {
 			System.out.print(temp.getValue());
 			root = temp.getRight();
 		}
-
 	}
 
 	public static void preOrder(TreeNode root) {
