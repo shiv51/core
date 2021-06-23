@@ -8,7 +8,20 @@ import java.util.Queue;
 public class Permutations {
 	
 	public final static List<String> l1 = new ArrayList<String>();
-
+	
+	public static void perm1(int[] nums, int index,List<Integer> l,List<List<Integer>> output){
+		if(l.size() == nums.length){
+			output.add(l);
+			l.remove(nums.length-1);
+			return;
+		}
+		for(int i=0;i<=l.size();i++){
+			List<Integer> ll = new ArrayList<>(l);
+			l.add(i,nums[index]);
+			perm1(nums, index+1, ll,output);
+		}
+		
+	}
 	public static void main(String[] args) {
 		int[] input = {1,2,3};
 		Queue<List<Integer>> q = new LinkedList<List<Integer>>();

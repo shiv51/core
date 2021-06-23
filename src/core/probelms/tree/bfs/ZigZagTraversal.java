@@ -14,9 +14,13 @@ public class ZigZagTraversal {
 		TreeNode one = new TreeNode(1);
 		TreeNode two = new TreeNode(2);
 		TreeNode three = new TreeNode(3);
+		TreeNode four = new TreeNode(4);
+		TreeNode five = new TreeNode(5);
 		one.setLeft(two);
 		one.setRight(three);
-		traverse(one);
+		two.setLeft(four);
+		two.setRight(five);
+		doIt(one);
 	}
 
 	private static void traverse(TreeNode one) {
@@ -45,5 +49,32 @@ public class ZigZagTraversal {
  				ll.add(l);
 		}
  		System.out.println(ll);
+	}
+	
+	private static void doIt(TreeNode one) {
+		
+		Queue<TreeNode> q = new LinkedList<>();
+		q.offer(one);
+		boolean flag = true;
+		while(!q.isEmpty()){
+			int x = q.size();
+			List<TreeNode> l = new ArrayList<>();
+			for(int i=0;i<x;i++){
+				TreeNode temp = q.poll();
+				if(flag)
+					l.add(temp);
+				else {
+					l.add(0,temp);
+				}
+				if(temp.getLeft()!=null){
+					q.add(temp.getLeft());
+				}
+				if(temp.getRight()!=null){
+					q.add(temp.getRight());
+				}
+			}
+			flag = !flag;
+			System.out.println(l);
+		}
 	}
 }
