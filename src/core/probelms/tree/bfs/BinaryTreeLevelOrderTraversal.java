@@ -25,6 +25,8 @@ public class BinaryTreeLevelOrderTraversal {
 		int repeat=1;
 		while(!q.isEmpty()) {
 			List<Integer> list = new ArrayList<Integer>();
+			int size = q.size();
+			System.out.println(size);
 			for(int i=0;i<repeat;i++) {
 				TreeNode temp = q.poll();
 				list.add(temp.getValue());
