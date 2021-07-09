@@ -1,4 +1,4 @@
-package core.probelms.dynamicprogramming;
+package core.problems.dynamicprogramming;
 
 public class KnapSack01 {
 

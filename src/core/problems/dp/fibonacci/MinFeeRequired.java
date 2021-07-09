@@ -1,4 +1,4 @@
-package core.probelms.dp.fibonacci;
+package core.problems.dp.fibonacci;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package core.probelms.dynamicprogramming;
+package core.problems.dynamicprogramming;
 
 import java.util.HashMap;
 import java.util.Map;
