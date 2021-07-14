@@ -1,4 +1,4 @@
-package core.probelms.graph;
+package core.problems.graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;

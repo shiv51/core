@@ -1,4 +1,4 @@
-package core.probelms.tree.dfs;
+package core.problems.tree.dfs;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

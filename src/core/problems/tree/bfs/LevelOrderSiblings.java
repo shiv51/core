@@ -1,4 +1,4 @@
-package core.probelms.tree.bfs;
+package core.problems.tree.bfs;
 
 import java.util.LinkedList;
 import java.util.Queue;

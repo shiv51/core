@@ -1,4 +1,4 @@
-package core.probelms.tree.bfs;
+package core.problems.tree.bfs;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

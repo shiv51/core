@@ -1,4 +1,4 @@
-package core.probelms.evolution;
+package core.problems.evolution;
 
 import java.util.ArrayList;
 import java.util.List;

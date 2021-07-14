@@ -1,11 +1,11 @@
-package core.probelms.tree.bfs;
+package core.problems.tree.bfs;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
 import core.tree.TreeNode;
 
-public class MinimumDepthOfBinaryTree {
+public class MaxiumDepthOfBinaryTree {
 	
 	public static void main(String[] args) {
 		TreeNode one = new TreeNode(1);
@@ -24,14 +24,16 @@ public class MinimumDepthOfBinaryTree {
 		q.add(root);
 		int count=0;
 		int h=1;
+		int max = 1;
 		while(!q.isEmpty()) {
 			for(int i=0; i<h;i++) {
 				TreeNode temp = q.poll();
+				if(temp==null)
+					break;
 				
 				if(temp.getLeft()==null && temp.getRight()==null) {
 					System.out.println("Leaf node is at - "+temp.getValue());
-					System.out.println(count+1);
-					return;
+					max = Math.max(max, count+1);
 				}
 				q.add(temp.getLeft());
 				q.add(temp.getRight());
@@ -39,6 +41,8 @@ public class MinimumDepthOfBinaryTree {
 			h=h*2;
 			count++;
 		}
+		
+		System.out.println(max);
 	}
 
 }

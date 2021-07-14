@@ -1,4 +1,4 @@
-package core.probelms.tree.BST;
+package core.problems.tree.BST;
 
 import core.tree.TreeNode;
 

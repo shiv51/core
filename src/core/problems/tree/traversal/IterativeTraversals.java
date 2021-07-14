@@ -1,4 +1,4 @@
-package core.probelms.tree.traversal;
+package core.problems.tree.traversal;
 
 import java.util.Stack;
 
